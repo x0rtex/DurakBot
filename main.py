@@ -30,11 +30,14 @@ async def on_ready():
     print(f"Logged in as {client.user} (ID: {client.user.id})")
     print("------")
 
+# noinspection PyUnresolvedReferences
 @client.tree.command()
 async def hello(interaction: discord.Interaction):
     """Says hello!"""
     await interaction.response.send_message(f'Hi, {interaction.user.mention}')
 
+
+# noinspection PyUnresolvedReferences
 @client.tree.command()
 @app_commands.describe(
     first_value='The first value you want to add something to',
