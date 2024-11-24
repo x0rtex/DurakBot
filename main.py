@@ -1,7 +1,7 @@
-import discord
 import os
+
+import discord
 from discord import app_commands
-from discord.ext import commands
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,8 +12,8 @@ MY_GUILD = discord.Object(id=GUILD)
 
 
 class MyClient(discord.Client):
-    def __init__(self, *, intents: discord.Intents):
-        super().__init__(intents=intents)
+    def __init__(self, *, client_intents: discord.Intents):
+        super().__init__(intents=client_intents)
         self.tree = app_commands.CommandTree(self)
 
     async def setup_hook(self):
@@ -22,7 +22,7 @@ class MyClient(discord.Client):
 
 
 intents = discord.Intents.default()
-client = MyClient(intents=intents)
+client = MyClient(client_intents=intents)
 
 @client.event
 async def on_ready():
