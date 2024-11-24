@@ -1,0 +1,2 @@
+# DurakBot
+Durak Discord Bot
